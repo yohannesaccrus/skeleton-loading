@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+h3, h4, p {
+	font-family: 'Nunito', sans-serif;
+}
+
+body {
+    section {
+        &.user {
+			background-color: white;
+			padding: 2.000em;
+
+			.descriptive {
+				&[layer=title] {
+					margin-bottom: 3.000em;
+					h3 {
+						color: rgba(black, .7);
+						font-weight: 600;
+						font-size: 1.500em;
+					}
+					p {
+						color: rgba(black, .5);
+						border-radius: .350em;
+						width: calc(50vw - 4.000em);
+					}
+				}
+				&[layer=container] {
+					display: flex;
+					justify-content: space-between;
+					flex-wrap: wrap;
+					.item {
+						border-radius: .350em;
+						box-shadow: 3px 3px 32px -1px rgba(64,64,63,0.09);
+						display: flex;
+						flex-basis: 48%;
+						align-items: center;
+						transition: all .5s ease;
+						margin-bottom: 2.000em;
+						padding: 1.300em;
+						&:hover {
+							transform: scale(1.02);
+						}
+						.media {
+							margin-right: 1.300em;
+							.img, img {
+								border: .250em solid rgba(black, .1);
+								border-radius: 50%;
+								width: 3.500em;
+								height: 3.500em;
+								object-fit: cover;
+							}
+						}
+						.text {
+							display: flex;
+							width: 100%;
+							flex-wrap: wrap;
+							h4, p {
+								border-radius: .350em;
+								flex-basis: 100%;
+							}
+							h4 {
+								color: rgba(black, .6);
+								font-weight: 700;
+								margin-bottom: .500em;
+							}
+							p {
+								color: rgba(black, .4);
+								&:not(:last-child) {
+									margin-bottom: .500em;
+								}
+							}
+						}
+					}
+				}
+			}
+        }
+    }
+}
+
+[state=meta] {
+	background: linear-gradient(-90deg, #F0F0F0 0%, #F8F8F8 50%, #F0F0F0 100%);
+	background-size: 400% 400%;
+    height: 102%;
+    width: 102%;
+	animation: pulse 1.2s ease-in-out infinite;
+	&.text {
+		color: rgba(black, 0) !important;
+	}
+}
+
+@keyframes pulse {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: -135% 0%;
+    }
+}
